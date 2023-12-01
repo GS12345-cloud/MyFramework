@@ -25,7 +25,6 @@
 
   <ItemGroup>
     <Folder Include="Support\" />
-    <Folder Include="Test\" />
   </ItemGroup>
 
   <ItemGroup>

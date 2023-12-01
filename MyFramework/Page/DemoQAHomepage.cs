@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Xml.Linq;
 
 namespace MyFramework.Page
 {
@@ -18,11 +19,14 @@ namespace MyFramework.Page
 
         //public IWebElement elementsCard;
         //public IWebElement pageTitle;
+        public IWebElement element;
 
 
         public DemoQAHomepage(IWebDriver driver)
         {
             this.driver = driver;
+
+            element = driver.FindElement(By.XPath("//*[@id=\"app\"]/div/div/div[2]/div/div[1]/div/div[2]"));
         }
 
         public void Click(IWebElement element)

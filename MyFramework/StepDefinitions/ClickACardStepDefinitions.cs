@@ -1,13 +1,10 @@
 using OpenQA.Selenium.Chrome;
 using OpenQA.Selenium;
-using System;
-using TechTalk.SpecFlow;
 using NUnit.Framework;
-using Xceed.Wpf.Toolkit;
 using OpenQA.Selenium.Support.UI;
-using SeleniumExtras;
 using SeleniumExtras.WaitHelpers;
 using System.Text.RegularExpressions;
+using MyFramework.Page;
 
 namespace MyFramework.StepDefinitions
 {
@@ -15,8 +12,14 @@ namespace MyFramework.StepDefinitions
     public class ClickACardStepDefinitions
     {
         public IWebDriver driver;
-        public IWebElement element;
-        
+        private DemoQAHomepage demoQAHomepage;
+
+        [BeforeScenario]
+        public void BeforeScenario()
+        {
+            demoQAHomepage = new DemoQAHomepage(driver);
+            demoQAHomepage.driver.Manage().Window.Maximize();
+        }
 
         public ClickACardStepDefinitions()
         {
@@ -24,7 +27,6 @@ namespace MyFramework.StepDefinitions
 
             driver = new ChromeDriver();
             driver.Url = "https://demoqa.com/";
-            element = driver.FindElement(By.XPath("//*[@id=\"app\"]/div/div/div[2]/div/div[1]/div/div[2]"));
         }
 
 
@@ -39,7 +41,7 @@ namespace MyFramework.StepDefinitions
         [When(@"the user clicks on the Card")]
         public void WhenTheUserClicksOnTheCard()
         {
-            element.Click();
+            demoQAHomepage.element.Click();
         }
 
         [Then(@"the page navigates to a new page")]
@@ -48,6 +50,13 @@ namespace MyFramework.StepDefinitions
             WebDriverWait wait = new(driver, TimeSpan.FromSeconds(5));
             bool url = wait.Until(ExpectedConditions.UrlMatches(new Regex("https://demoqa.com/elements").ToString()));
             Assert.IsTrue(url);
+        }
+
+
+        [AfterScenario]
+        public void AfterScenario()
+        {
+            driver.Quit();
         }
     }
 }
