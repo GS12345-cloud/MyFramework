@@ -26,7 +26,10 @@ namespace MyFramework.StepDefinitions
         [Given(@"the user is on the Homepage")]
         public void GivenTheUserIsOnTheHomepage()
         {
-
+            if (driver.Title != null)
+            {
+                Console.WriteLine(driver.Title);
+            }
         }
 
         [When(@"the user clicks on the Elements Card")]
