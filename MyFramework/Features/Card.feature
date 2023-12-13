@@ -1,7 +1,4 @@
-﻿Feature: Click a Card
-
-Background: 
-Given the user is on the Homepage
+﻿Feature:  
 
 Scenario: Navigating to the Elements Card's page
 
