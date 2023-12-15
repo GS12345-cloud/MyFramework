@@ -1,4 +1,6 @@
-﻿Feature:  
+﻿Feature:  Card
+
+Background: Given the user is on the elements page
 
 Scenario: Navigating to the Elements Card's page
 

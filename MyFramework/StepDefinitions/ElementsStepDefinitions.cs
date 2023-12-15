@@ -24,30 +24,6 @@ namespace MyFramework.StepDefinitions
             driver = new ChromeDriver();
             demoQAElements = new DemoQAElements(driver);
         }
-        public By textBoxFieldBy = By.XPath("//*[@id=\"item-0\"]/span");
-        public By TextBoxOutputResultBy = By.XPath("//*[@id=\"output\"]/div");
-        public By FullNameBy = By.XPath("//*[@id=\"userName\"]");
-        public By EmailBy = By.XPath("//*[@id=\"userEmail\"]");
-        public By CurrentAddressBy = By.XPath("//*[@id=\"currentAddress\"]");
-        public By PermanentAddressBy = By.XPath("//*[@id=\"permanentAddress\"]");
-        public By SubmitButtonBy = By.XPath("//*[@id=\"submit\"]");
-        public By CheckBoxBy = By.XPath("//*[@id=\"item-1\"]/span");
-        public By CheckBoxHomeBy = By.XPath("//*[@id=\"tree-node\"]/ol/li/span/label");
-        public By RadioButtonBy = By.XPath("//*[@id=\"item-2\"]/span");
-        public By RadioButtonYesBy = By.XPath("//*[@id=\"app\"]/div/div/div[2]/div[2]/div[2]/div[2]/label");
-        public By RadioButtonSelectedYesConfirmationBy = By.XPath("//*[@id=\"app\"]/div/div/div[2]/div[2]/div[2]/p/span");
-        public IWebElement TextBoxField => driver.FindElement(textBoxFieldBy);
-        public IWebElement TextBoxOutputResult => driver.FindElement(TextBoxOutputResultBy);
-        public IWebElement FullName => driver.FindElement(FullNameBy);
-        public IWebElement Email => driver.FindElement(EmailBy);
-        public IWebElement CurrentAddress => driver.FindElement(CurrentAddressBy);
-        public IWebElement PermanentAddress => driver.FindElement(PermanentAddressBy);
-        public IWebElement SubmitButton => driver.FindElement(SubmitButtonBy);
-        public IWebElement CheckBox => driver.FindElement(CheckBoxBy);
-        public IWebElement CheckBoxHome => driver.FindElement(CheckBoxHomeBy);
-        public IWebElement RadioButton => driver.FindElement(RadioButtonBy);
-        public IWebElement RadioButtonYes => driver.FindElement(RadioButtonYesBy);
-        public IWebElement RadioButtonSelectedConfirmation => driver.FindElement(RadioButtonSelectedYesConfirmationBy);
 
 
         [AfterScenario]
@@ -57,7 +33,7 @@ namespace MyFramework.StepDefinitions
             driver.Quit();
         }
 
-        [Given(@"the user is on the Elements page")]
+        [Given(@"the user is on the elements page")]
         public void GivenTheUserIsOnTheElementsPage()
         {
             WebDriverWait wait = new(driver, TimeSpan.FromSeconds(5));
@@ -73,9 +49,9 @@ namespace MyFramework.StepDefinitions
         {
             WebDriverWait wait = new(driver, TimeSpan.FromSeconds(5));
 
-            if (wait.Until(ExpectedConditions.ElementIsVisible(textBoxFieldBy)) != null)
+            if (wait.Until(ExpectedConditions.ElementIsVisible(demoQAElements.textBoxFieldBy)) != null)
             {
-                TextBoxField.Click();
+                demoQAElements.TextBoxField.Click();
                 // Url check as url changes
             }
         }
@@ -85,25 +61,25 @@ namespace MyFramework.StepDefinitions
         {
             WebDriverWait wait = new(driver, TimeSpan.FromSeconds(5));
 
-            if (wait.Until(ExpectedConditions.ElementIsVisible(FullNameBy)) != null)
+            if (wait.Until(ExpectedConditions.ElementIsVisible(demoQAElements.FullNameBy)) != null)
             {
-                FullName.SendKeys("FullName");
+                demoQAElements.FullName.SendKeys("FullName");
             }
-            if (wait.Until(ExpectedConditions.ElementIsVisible(EmailBy)) != null)
+            if (wait.Until(ExpectedConditions.ElementIsVisible(demoQAElements.EmailBy)) != null)
             {
-                Email.SendKeys("test@gmail.com");
+                demoQAElements.Email.SendKeys("test@gmail.com");
             }
-            if (wait.Until(ExpectedConditions.ElementIsVisible(CurrentAddressBy)) != null)
+            if (wait.Until(ExpectedConditions.ElementIsVisible(demoQAElements.CurrentAddressBy)) != null)
             {
-                CurrentAddress.SendKeys("My Address");
+                demoQAElements.CurrentAddress.SendKeys("My Address");
             }
-            if (wait.Until(ExpectedConditions.ElementIsVisible(PermanentAddressBy)) != null)
+            if (wait.Until(ExpectedConditions.ElementIsVisible(demoQAElements.PermanentAddressBy)) != null)
             {
-                PermanentAddress.SendKeys("My Permanent Address");
+                demoQAElements.PermanentAddress.SendKeys("My Permanent Address");
             }
-            if (wait.Until(ExpectedConditions.ElementIsVisible(SubmitButtonBy)) != null)
+            if (wait.Until(ExpectedConditions.ElementIsVisible(demoQAElements.SubmitButtonBy)) != null)
             {
-                SubmitButton.Click();
+                demoQAElements.SubmitButton.Click();
             }
 
 
@@ -116,7 +92,7 @@ namespace MyFramework.StepDefinitions
             WebDriverWait wait = new(driver, TimeSpan.FromSeconds(5));
 
 
-            if (wait.Until(ExpectedConditions.ElementIsVisible(TextBoxOutputResultBy)) != null)
+            if (wait.Until(ExpectedConditions.ElementIsVisible(demoQAElements.TextBoxOutputResultBy)) != null)
             {
                 Assert.True(true);
             }
@@ -127,9 +103,9 @@ namespace MyFramework.StepDefinitions
         {
             WebDriverWait wait = new(driver, TimeSpan.FromSeconds(5));
 
-            if (wait.Until(ExpectedConditions.ElementIsVisible(CheckBoxBy)) != null)
+            if (wait.Until(ExpectedConditions.ElementIsVisible(demoQAElements.CheckBoxBy)) != null)
             {
-                CheckBox.Click();
+                demoQAElements.CheckBox.Click();
             }
         }
 
@@ -138,9 +114,9 @@ namespace MyFramework.StepDefinitions
         {
             WebDriverWait wait = new(driver, TimeSpan.FromSeconds(5));
 
-            if (wait.Until(ExpectedConditions.ElementIsVisible(CheckBoxHomeBy)) != null)
+            if (wait.Until(ExpectedConditions.ElementIsVisible(demoQAElements.CheckBoxHomeBy)) != null)
             {
-                CheckBoxHome.Click();
+                demoQAElements.CheckBoxHome.Click();
             }
         }
 
@@ -159,7 +135,7 @@ namespace MyFramework.StepDefinitions
 
             if (wait.Until(ExpectedConditions.VisibilityOfAllElementsLocatedBy(By.XPath("./*"))) != null)
             {
-                CheckBoxHome.Click();
+                demoQAElements.CheckBoxHome.Click();
             }
         }
 
@@ -168,9 +144,9 @@ namespace MyFramework.StepDefinitions
         {
             WebDriverWait wait = new(driver, TimeSpan.FromSeconds(5));
 
-            if (wait.Until(ExpectedConditions.ElementIsVisible(RadioButtonBy)) != null)
+            if (wait.Until(ExpectedConditions.ElementIsVisible(demoQAElements.RadioButtonBy)) != null)
             {
-                RadioButton.Click();
+                demoQAElements.RadioButton.Click();
             }
         }
 
@@ -179,9 +155,9 @@ namespace MyFramework.StepDefinitions
         {
             WebDriverWait wait = new(driver, TimeSpan.FromSeconds(10));
 
-            if (wait.Until(ExpectedConditions.ElementIsVisible(RadioButtonYesBy)) != null)
+            if (wait.Until(ExpectedConditions.ElementIsVisible(demoQAElements.RadioButtonYesBy)) != null)
             {
-                RadioButtonYes.Click();
+                demoQAElements.RadioButtonYes.Click();
             }
         }
 
@@ -190,9 +166,9 @@ namespace MyFramework.StepDefinitions
         {
             WebDriverWait wait = new(driver, TimeSpan.FromSeconds(5));
 
-            if (wait.Until(ExpectedConditions.ElementIsVisible(RadioButtonSelectedYesConfirmationBy)) != null)
+            if (wait.Until(ExpectedConditions.ElementIsVisible(demoQAElements.RadioButtonSelectedYesConfirmationBy)) != null)
             {
-                RadioButtonSelectedConfirmation.Click();
+                demoQAElements.RadioButtonSelectedConfirmation.Click();
             }
         }
     }
