@@ -29,9 +29,9 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Compile Update="Features\Details.feature.cs">
+    <Compile Update="Features\Elements.feature.cs">
       <Visible>true</Visible>
-      <DependentUpon>Details.feature</DependentUpon>
+      <DependentUpon>Elements.feature</DependentUpon>
       <DesignTime>true</DesignTime>
       <AutoGen>true</AutoGen>
     </Compile>
@@ -41,7 +41,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <SpecFlowFeatureFiles Update="Features\Details.feature">
+    <SpecFlowFeatureFiles Update="Features\Elements.feature">
       <Visible>$(UsingMicrosoftNETSdk)</Visible>
       <CodeBehindFile>%(RelativeDir)%(Filename).feature$(DefaultLanguageSourceExtension)</CodeBehindFile>
     </SpecFlowFeatureFiles>

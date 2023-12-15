@@ -25,7 +25,7 @@ namespace MyFramework.Page
         }
 
         /// <summary>
-        /// using By locators with XPath (aware id, name is better but starting with XPath for learning purposes), MS Dynamics has dynamic elements anyway.
+        /// using By locators with XPath (aware id, name is better but starting with XPath for learning purposes).
         /// </summary>
         public By elementsCardBy = By.XPath("//*[@id=\"app\"]/div/div/div[2]/div/div[1]");
         public By formsCardBy = By.XPath("//*[@id=\"app\"]/div/div/div[2]/div/div[2]");

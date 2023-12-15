@@ -1,7 +1,7 @@
 ﻿Feature: Elements
 
 Background: 
-Given the user is on the Elements page
+Given the user is on the elements page
 
 Scenario: Text Box
 And the user clicks on the Text Box field
@@ -12,7 +12,6 @@ Scenario: Checkbox
 And the user clicks on the Check Box field
 When the user clicks on the Home checkbox
 Then all the checkboxes change to ticked
-
 
 Scenario: Radio Button
 And the user clicks on the Radio Button field

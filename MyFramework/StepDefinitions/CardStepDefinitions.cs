@@ -11,26 +11,19 @@ using System.Text.RegularExpressions;
 namespace MyFramework.StepDefinitions
 {
     [Binding]
-    public class ClickACardStepDefinitions
+    public class CardStepDefinitions
     {
         private IWebDriver driver;
         private readonly DemoQAHomepage demoQAHomepage;
 
-        public ClickACardStepDefinitions()
+        public CardStepDefinitions()
         {
             // Initialize the page object with the WebDriver
             driver = new ChromeDriver();
             demoQAHomepage = new DemoQAHomepage(driver);
         }
 
-        [Given(@"the user is on the Homepage")]
-        public void GivenTheUserIsOnTheHomepage()
-        {
-            if (driver.Title != null)
-            {
-                Console.WriteLine(driver.Title);
-            }
-        }
+
 
         [When(@"the user clicks on the Elements Card")]
         public void WhenTheUserClicksOnTheElementsCard()

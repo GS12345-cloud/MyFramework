@@ -28,7 +28,7 @@ namespace MyFramework.Features
         
         private static string[] featureTags = ((string[])(null));
         
-#line 1 "Details.feature"
+#line 1 "Elements.feature"
 #line hidden
         
         [NUnit.Framework.OneTimeSetUpAttribute()]
@@ -78,7 +78,7 @@ namespace MyFramework.Features
 #line 3
 #line hidden
 #line 4
-testRunner.Given("the user is on the Elements page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+testRunner.Given("the user is on the elements page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line hidden
         }
         
