@@ -10,12 +10,12 @@ namespace MyFramework.Page
     /// 
     /// Also using Dependancy Injection rather than inheriting from a base class / page
     /// </summary>
-    public class DemoQAHomepage
+    public class DemoQABookStoreApplication
     {
         private readonly WebDriverWait wait;
         private IWebDriver driver;
 
-        public DemoQAHomepage(IWebDriver driver)
+        public DemoQABookStoreApplication(IWebDriver driver)
         {
             wait = new WebDriverWait(driver, TimeSpan.FromSeconds(4));
             this.driver = driver;

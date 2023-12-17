@@ -11,16 +11,16 @@ using System.Text.RegularExpressions;
 namespace MyFramework.StepDefinitions
 {
     [Binding]
-    public class CardStepDefinitions
+    public class InteractionsStepDefinitions
     {
         private IWebDriver driver;
-        private readonly DemoQAHomepage demoQAHomepage;
+        private readonly DemoQAInteractions demoQAInteractions;
 
-        public CardStepDefinitions()
+        public InteractionsStepDefinitions()
         {
             // Initialize the page object with the WebDriver
             driver = new ChromeDriver();
-            demoQAHomepage = new DemoQAHomepage(driver);
+            demoQAInteractions = new DemoQAInteractions(driver);
         }
 
 
@@ -28,31 +28,31 @@ namespace MyFramework.StepDefinitions
         [When(@"the user clicks on the Elements Card")]
         public void WhenTheUserClicksOnTheElementsCard()
         {
-            demoQAHomepage.elementsCard.Click();
+            demoQAInteractions.elementsCard.Click();
         }
 
         [When(@"the user clicks on the Forms Card")]
         public void WhenTheUserClicksOnTheFormsCard()
         {
-            demoQAHomepage.formsCard.Click();
+            demoQAInteractions.formsCard.Click();
         }
 
         [When(@"the user clicks on the Alerts Card")]
         public void WhenTheUserClicksOnTheAlertsCard()
         {
-            demoQAHomepage.alertsCard.Click();
+            demoQAInteractions.alertsCard.Click();
         }
 
         [When(@"the user clicks on the Widgets Card")]
         public void WhenTheUserClicksOnTheWidgetsCard()
         {
-            demoQAHomepage.widgetsCard.Click();
+            demoQAInteractions.widgetsCard.Click();
         }
 
         [When(@"the user clicks on the Interactions Card")]
         public void WhenTheUserClicksOnTheInteractionsCard()
         {
-            demoQAHomepage.interactionsCard.Click();
+            demoQAInteractions.interactionsCard.Click();
         }
 
 

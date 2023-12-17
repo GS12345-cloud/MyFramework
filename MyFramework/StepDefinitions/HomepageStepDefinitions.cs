@@ -11,12 +11,12 @@ using System.Text.RegularExpressions;
 namespace MyFramework.StepDefinitions
 {
     [Binding]
-    public class CardStepDefinitions
+    public class HomepageStepDefinitions
     {
         private IWebDriver driver;
         private readonly DemoQAHomepage demoQAHomepage;
 
-        public CardStepDefinitions()
+        public HomepageStepDefinitions()
         {
             // Initialize the page object with the WebDriver
             driver = new ChromeDriver();

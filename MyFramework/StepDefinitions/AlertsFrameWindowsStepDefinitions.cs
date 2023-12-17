@@ -11,16 +11,16 @@ using System.Text.RegularExpressions;
 namespace MyFramework.StepDefinitions
 {
     [Binding]
-    public class CardStepDefinitions
+    public class AlertsFrameWindowsStepDefinitions
     {
         private IWebDriver driver;
-        private readonly DemoQAHomepage demoQAHomepage;
+        private readonly DemoQAAlertsFrameWindows demoQAAlertsFrameWindows;
 
-        public CardStepDefinitions()
+        public AlertsFrameWindowsStepDefinitions()
         {
             // Initialize the page object with the WebDriver
             driver = new ChromeDriver();
-            demoQAHomepage = new DemoQAHomepage(driver);
+            demoQAAlertsFrameWindows = new DemoQAAlertsFrameWindows(driver);
         }
 
 
@@ -28,31 +28,31 @@ namespace MyFramework.StepDefinitions
         [When(@"the user clicks on the Elements Card")]
         public void WhenTheUserClicksOnTheElementsCard()
         {
-            demoQAHomepage.elementsCard.Click();
+            demoQAAlertsFrameWindows.elementsCard.Click();
         }
 
         [When(@"the user clicks on the Forms Card")]
         public void WhenTheUserClicksOnTheFormsCard()
         {
-            demoQAHomepage.formsCard.Click();
+            demoQAAlertsFrameWindows.formsCard.Click();
         }
 
         [When(@"the user clicks on the Alerts Card")]
         public void WhenTheUserClicksOnTheAlertsCard()
         {
-            demoQAHomepage.alertsCard.Click();
+            demoQAAlertsFrameWindows.alertsCard.Click();
         }
 
         [When(@"the user clicks on the Widgets Card")]
         public void WhenTheUserClicksOnTheWidgetsCard()
         {
-            demoQAHomepage.widgetsCard.Click();
+            demoQAAlertsFrameWindows.widgetsCard.Click();
         }
 
         [When(@"the user clicks on the Interactions Card")]
         public void WhenTheUserClicksOnTheInteractionsCard()
         {
-            demoQAHomepage.interactionsCard.Click();
+            demoQAAlertsFrameWindows.interactionsCard.Click();
         }
 
 

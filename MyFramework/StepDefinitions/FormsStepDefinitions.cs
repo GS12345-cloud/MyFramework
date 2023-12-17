@@ -11,56 +11,30 @@ using System.Text.RegularExpressions;
 namespace MyFramework.StepDefinitions
 {
     [Binding]
-    public class CardStepDefinitions
+    public class FormsStepDefinitions
     {
         private IWebDriver driver;
-        private readonly DemoQAHomepage demoQAHomepage;
+        private readonly DemoQAForms demoQAForms;
 
-        public CardStepDefinitions()
+        public FormsStepDefinitions()
         {
             // Initialize the page object with the WebDriver
             driver = new ChromeDriver();
-            demoQAHomepage = new DemoQAHomepage(driver);
+            demoQAForms = new DemoQAForms(driver);
         }
 
-
-
-        [When(@"the user clicks on the Elements Card")]
-        public void WhenTheUserClicksOnTheElementsCard()
+        [Given(@"the user is on the forms page")]
+        public void GivenTheUserIsOnTheFormsPage()
         {
-            demoQAHomepage.elementsCard.Click();
+            throw new PendingStepException();
         }
 
-        [When(@"the user clicks on the Forms Card")]
-        public void WhenTheUserClicksOnTheFormsCard()
+        [Then(@"the user submits their details")]
+        public void ThenTheUserSubmitsTheirDetails()
         {
-            demoQAHomepage.formsCard.Click();
+            throw new PendingStepException();
         }
 
-        [When(@"the user clicks on the Alerts Card")]
-        public void WhenTheUserClicksOnTheAlertsCard()
-        {
-            demoQAHomepage.alertsCard.Click();
-        }
-
-        [When(@"the user clicks on the Widgets Card")]
-        public void WhenTheUserClicksOnTheWidgetsCard()
-        {
-            demoQAHomepage.widgetsCard.Click();
-        }
-
-        [When(@"the user clicks on the Interactions Card")]
-        public void WhenTheUserClicksOnTheInteractionsCard()
-        {
-            demoQAHomepage.interactionsCard.Click();
-        }
-
-
-        [Then(@"the page navigates to a new page")]
-        public void ThenThePageNavigatesToANewPage()
-        {
-            Assert.IsTrue(true);
-        }
 
         [AfterScenario]
         public void AfterScenario()
