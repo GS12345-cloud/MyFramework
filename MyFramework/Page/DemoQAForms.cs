@@ -27,19 +27,34 @@ namespace MyFramework.Page
         /// <summary>
         /// using By locators with XPath (aware id, name is better but starting with XPath for learning purposes).
         /// </summary>
-        public By elementsCardBy = By.XPath("//*[@id=\"app\"]/div/div/div[2]/div/div[1]");
-        public By formsCardBy = By.XPath("//*[@id=\"app\"]/div/div/div[2]/div/div[2]");
-        public By alertsCardBy = By.XPath("//*[@id=\"app\"]/div/div/div[2]/div/div[3]");
-        public By widgetsCardBy = By.XPath("//*[@id=\"app\"]/div/div/div[2]/div/div[4]");
-        public By interactionsCardBy = By.XPath("//*[@id=\"app\"]/div/div/div[2]/div/div[5]");
+        public By forenameBy = By.XPath("//*[@id=\"firstName\"]");
+        public By surnameBy = By.XPath("//*[@id=\"lastName\"]");
+        public By emailBy = By.XPath("//*[@id=\"userEmail\"]");
+        public By genderMaleBy = By.XPath("//*[@id=\"gender-radio-1\"]");
+        public By genderFemaleBy = By.XPath("//*[@id=\"gender-radio-2\"]");
+        public By genderOtherBy = By.XPath("//*[@id=\"gender-radio-3\"]");
+        public By mobileBy = By.XPath("//*[@id=\"userNumber\"]");
+        public By dateOfBirthBy = By.XPath("//*[@id=\"dateOfBirthInput\"]");
+        public By subjectsBy = By.XPath("//*[@id=\"subjectsContainer\"]/div/div[1]");
+        public By hobbiesSportsBy = By.XPath("//*[@id=\"hobbiesWrapper\"]/div[2]/div[1]/label");
+        public By hobbiesReadingBy = By.XPath("//*[@id=\"hobbiesWrapper\"]/div[2]/div[2]/label");
+        public By hobbiesMusicBy = By.XPath("//*[@id=\"hobbiesWrapper\"]/div[2]/div[3]/label");
         /// <summary>
         /// Updated to add the driver.FindElement to the IWebElement
         /// </summary>
-        public IWebElement elementsCard => driver.FindElement(elementsCardBy);
-        public IWebElement formsCard => driver.FindElement(formsCardBy);
-        public IWebElement alertsCard => driver.FindElement(alertsCardBy);
-        public IWebElement widgetsCard => driver.FindElement(widgetsCardBy);
-        public IWebElement interactionsCard => driver.FindElement(interactionsCardBy);
+        public IWebElement ForenameElement => driver.FindElement(forenameBy);
+        public IWebElement SurnameElement => driver.FindElement(surnameBy);
+        public IWebElement EmailElement => driver.FindElement(emailBy);
+        public IWebElement GenderMaleElement => driver.FindElement(genderMaleBy);
+        public IWebElement GenderFemaleElement => driver.FindElement(genderFemaleBy);
+        public IWebElement GenderOtherElement => driver.FindElement(genderOtherBy);
+        public IWebElement MobileElement => driver.FindElement(mobileBy);
+        public IWebElement DateOfBirthElement => driver.FindElement(dateOfBirthBy);
+        public IWebElement SubjectsElement => driver.FindElement(subjectsBy);
+        public IWebElement HobbiesSportsElement => driver.FindElement(hobbiesSportsBy);
+        public IWebElement HobbiesReadingElement => driver.FindElement(hobbiesReadingBy);
+        public IWebElement HobbiesMusicElement => driver.FindElement(hobbiesMusicBy);
+
 
         public string url = "https://demoqa.com/";
 

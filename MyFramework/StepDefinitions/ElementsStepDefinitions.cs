@@ -1,3 +1,4 @@
+using MyFramework.Hooks;
 using MyFramework.Page;
 using NUnit.Framework;
 using OpenQA.Selenium;
@@ -60,6 +61,11 @@ namespace MyFramework.StepDefinitions
         public void WhenTheUserEntersTheirDetails()
         {
             WebDriverWait wait = new(driver, TimeSpan.FromSeconds(5));
+
+            Person person = new Person("John", "Smith", "Address Here", "myemail@gmail.com", )
+            {
+
+            }
 
             if (wait.Until(ExpectedConditions.ElementIsVisible(demoQAElements.FullNameBy)) != null)
             {

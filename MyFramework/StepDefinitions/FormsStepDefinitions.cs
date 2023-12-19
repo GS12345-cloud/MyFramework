@@ -1,46 +1,40 @@
-using MyFramework.Page;
-using NUnit.Framework;
-using OpenQA.Selenium;
-using OpenQA.Selenium.Chrome;
-using OpenQA.Selenium.Support.UI;
-using SeleniumExtras.WaitHelpers;
+using MyFramework.Hooks;
 using System;
-using System.Security.Policy;
-using System.Text.RegularExpressions;
+using TechTalk.SpecFlow;
 
 namespace MyFramework.StepDefinitions
 {
     [Binding]
     public class FormsStepDefinitions
     {
-        private IWebDriver driver;
-        private readonly DemoQAForms demoQAForms;
-
-        public FormsStepDefinitions()
-        {
-            // Initialize the page object with the WebDriver
-            driver = new ChromeDriver();
-            demoQAForms = new DemoQAForms(driver);
-        }
+        Person person = new Person(forename: "Alice",
+    surname: "Johnson",
+    address: "123 Main Street, Cityville",
+    emailAddress: "alice.johnson@email.com",
+    gender: "Female",
+    mobile: "+1 555-1234",
+    dateOfBirth: "1990-05-15",
+    subjects: "Computer Science",
+    hobbies: "Reading, Hiking",
+    picture: "alice_profile_picture.jpg",
+    currentAddress: "456 Oak Avenue, Townsville");
 
         [Given(@"the user is on the forms page")]
         public void GivenTheUserIsOnTheFormsPage()
         {
-            throw new PendingStepException();
+            // url check
+        }
+
+        [When(@"the user completes the student registeration form")]
+        public void WhenTheUserCompletesTheStudentRegisterationForm()
+        {
+
         }
 
         [Then(@"the user submits their details")]
         public void ThenTheUserSubmitsTheirDetails()
         {
             throw new PendingStepException();
-        }
-
-
-        [AfterScenario]
-        public void AfterScenario()
-        {
-            driver.Close();
-            driver.Quit();
         }
     }
 }
