@@ -1,3 +1,4 @@
+using MyFramework.Hooks;
 using MyFramework.Page;
 using NUnit.Framework;
 using OpenQA.Selenium;
@@ -60,6 +61,11 @@ namespace MyFramework.StepDefinitions
         public void WhenTheUserEntersTheirDetails()
         {
             WebDriverWait wait = new(driver, TimeSpan.FromSeconds(5));
+
+            Person person = new Person("John", "Smith", "Address Here", "myemail@gmail.com", )
+            {
+
+            }
 
             if (wait.Until(ExpectedConditions.ElementIsVisible(demoQAElements.FullNameBy)) != null)
             {
@@ -171,6 +177,121 @@ namespace MyFramework.StepDefinitions
                 demoQAElements.RadioButtonSelectedConfirmation.Click();
             }
         }
+
+        [Given(@"the user clicks on the Web Tables field")]
+        public void GivenTheUserClicksOnTheWebTablesField()
+        {
+            throw new PendingStepException();
+        }
+
+        [When(@"the user clicks on the Add button")]
+        public void WhenTheUserClicksOnTheAddButton()
+        {
+            throw new PendingStepException();
+        }
+
+        [Then(@"the user completes the form")]
+        public void ThenTheUserCompletesTheForm()
+        {
+            throw new PendingStepException();
+        }
+
+        [Given(@"the user clicks on the Buttons field")]
+        public void GivenTheUserClicksOnTheButtonsField()
+        {
+            throw new PendingStepException();
+        }
+
+        [When(@"the user clicks on the Click Me button")]
+        public void WhenTheUserClicksOnTheClickMeButton()
+        {
+            throw new PendingStepException();
+        }
+
+        [Then(@"the gets a text success")]
+        public void ThenTheGetsATextSuccess()
+        {
+            throw new PendingStepException();
+        }
+
+        [Given(@"the user clicks on the Links field")]
+        public void GivenTheUserClicksOnTheLinksField()
+        {
+            throw new PendingStepException();
+        }
+
+        [When(@"the user clicks on the Home link")]
+        public void WhenTheUserClicksOnTheHomeLink()
+        {
+            throw new PendingStepException();
+        }
+
+        [Then(@"the user gets navigated to the Home page")]
+        public void ThenTheUserGetsNavigatedToTheHomePage()
+        {
+            throw new PendingStepException();
+        }
+
+        [Given(@"the user clicks on the Broken Link - Images field")]
+        public void GivenTheUserClicksOnTheBrokenLink_ImagesField()
+        {
+            throw new PendingStepException();
+        }
+
+        [When(@"the user clicks on the Broken link")]
+        public void WhenTheUserClicksOnTheBrokenLink()
+        {
+            throw new PendingStepException();
+        }
+
+        [Then(@"the user gets navigated to a broken page")]
+        public void ThenTheUserGetsNavigatedToABrokenPage()
+        {
+            throw new PendingStepException();
+        }
+
+        [Given(@"the user clicks on the Upload and Download field")]
+        public void GivenTheUserClicksOnTheUploadAndDownloadField()
+        {
+            throw new PendingStepException();
+        }
+
+        [When(@"the user chooses a file")]
+        public void WhenTheUserChoosesAFile()
+        {
+            throw new PendingStepException();
+        }
+
+        [Then(@"the user gets a filepath response")]
+        public void ThenTheUserGetsAFilepathResponse()
+        {
+            throw new PendingStepException();
+        }
+
+        [Then(@"the user downloads a file")]
+        public void ThenTheUserDownloadsAFile()
+        {
+            throw new PendingStepException();
+        }
+
+        [Given(@"the user clicks on the Dynamics Properties field")]
+        public void GivenTheUserClicksOnTheDynamicsPropertiesField()
+        {
+            throw new PendingStepException();
+        }
+
+        [When(@"the user is met with a Will enable (.*) seconds button")]
+        public void WhenTheUserIsMetWithAWillEnableSecondsButton(int p0)
+        {
+            throw new PendingStepException();
+        }
+
+        [Then(@"the user can see a new button appear")]
+        public void ThenTheUserCanSeeANewButtonAppear()
+        {
+            throw new PendingStepException();
+        }
+
     }
 }
  
