@@ -1,4 +1,4 @@
-﻿Feature: Elements
+﻿Feature: BookStoreApplication
 
 Background: 
 Given the user is on the elements page

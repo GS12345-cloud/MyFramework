@@ -1,4 +1,4 @@
-﻿Feature: Elements
+﻿Feature: AlertsFrameWindows
 
 Background: 
 Given the user is on the elements page

@@ -25,43 +25,6 @@ namespace MyFramework.StepDefinitions
 
 
 
-        [When(@"the user clicks on the Elements Card")]
-        public void WhenTheUserClicksOnTheElementsCard()
-        {
-            demoQAInteractions.elementsCard.Click();
-        }
-
-        [When(@"the user clicks on the Forms Card")]
-        public void WhenTheUserClicksOnTheFormsCard()
-        {
-            demoQAInteractions.formsCard.Click();
-        }
-
-        [When(@"the user clicks on the Alerts Card")]
-        public void WhenTheUserClicksOnTheAlertsCard()
-        {
-            demoQAInteractions.alertsCard.Click();
-        }
-
-        [When(@"the user clicks on the Widgets Card")]
-        public void WhenTheUserClicksOnTheWidgetsCard()
-        {
-            demoQAInteractions.widgetsCard.Click();
-        }
-
-        [When(@"the user clicks on the Interactions Card")]
-        public void WhenTheUserClicksOnTheInteractionsCard()
-        {
-            demoQAInteractions.interactionsCard.Click();
-        }
-
-
-        [Then(@"the page navigates to a new page")]
-        public void ThenThePageNavigatesToANewPage()
-        {
-            Assert.IsTrue(true);
-        }
-
         [AfterScenario]
         public void AfterScenario()
         {
