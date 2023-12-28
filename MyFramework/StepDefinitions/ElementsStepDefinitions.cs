@@ -7,6 +7,7 @@ using OpenQA.Selenium.Support.UI;
 using SeleniumExtras.WaitHelpers;
 using System;
 using System.Collections.ObjectModel;
+using System.Drawing;
 using System.Security.Policy;
 using TechTalk.SpecFlow;
 
@@ -61,11 +62,7 @@ namespace MyFramework.StepDefinitions
         public void WhenTheUserEntersTheirDetails()
         {
             WebDriverWait wait = new(driver, TimeSpan.FromSeconds(5));
-
-            Person person = new Person("John", "Smith", "Address Here", "myemail@gmail.com", )
-            {
-
-            }
+            
 
             if (wait.Until(ExpectedConditions.ElementIsVisible(demoQAElements.FullNameBy)) != null)
             {
