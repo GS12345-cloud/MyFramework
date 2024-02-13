@@ -35,18 +35,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Compile Update="Features\BookStoreApplication.feature.cs">
-      <DependentUpon>BookStoreApplication.feature</DependentUpon>
-    </Compile>
-    <Compile Update="Features\Interactions.feature.cs">
-      <DependentUpon>Interactions.feature</DependentUpon>
-    </Compile>
-    <Compile Update="Features\Widgets.feature.cs">
-      <DependentUpon>Widgets.feature</DependentUpon>
-    </Compile>
-    <Compile Update="Features\AlertsFrameWindows.feature.cs">
-      <DependentUpon>AlertsFrameWindows.feature</DependentUpon>
-    </Compile>
     <Compile Update="Features\Forms.feature.cs">
       <DependentUpon>Forms.feature</DependentUpon>
     </Compile>
@@ -62,22 +50,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <SpecFlowFeatureFiles Update="Features\BookStoreApplication.feature">
-      <Visible>$(UsingMicrosoftNETSdk)</Visible>
-      <CodeBehindFile>%(RelativeDir)%(Filename).feature$(DefaultLanguageSourceExtension)</CodeBehindFile>
-    </SpecFlowFeatureFiles>
-    <SpecFlowFeatureFiles Update="Features\Interactions.feature">
-      <Visible>$(UsingMicrosoftNETSdk)</Visible>
-      <CodeBehindFile>%(RelativeDir)%(Filename).feature$(DefaultLanguageSourceExtension)</CodeBehindFile>
-    </SpecFlowFeatureFiles>
-    <SpecFlowFeatureFiles Update="Features\Widgets.feature">
-      <Visible>$(UsingMicrosoftNETSdk)</Visible>
-      <CodeBehindFile>%(RelativeDir)%(Filename).feature$(DefaultLanguageSourceExtension)</CodeBehindFile>
-    </SpecFlowFeatureFiles>
-    <SpecFlowFeatureFiles Update="Features\AlertsFrameWindows.feature">
-      <Visible>$(UsingMicrosoftNETSdk)</Visible>
-      <CodeBehindFile>%(RelativeDir)%(Filename).feature$(DefaultLanguageSourceExtension)</CodeBehindFile>
-    </SpecFlowFeatureFiles>
     <SpecFlowFeatureFiles Update="Features\Forms.feature">
       <Visible>$(UsingMicrosoftNETSdk)</Visible>
       <CodeBehindFile>%(RelativeDir)%(Filename).feature$(DefaultLanguageSourceExtension)</CodeBehindFile>

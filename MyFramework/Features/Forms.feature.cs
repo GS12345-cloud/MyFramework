@@ -74,12 +74,12 @@ namespace MyFramework.Features
         }
         
         [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("Form")]
-        public void Form()
+        [NUnit.Framework.DescriptionAttribute("User Submits Student Registration Form on Forms Page")]
+        public void UserSubmitsStudentRegistrationFormOnFormsPage()
         {
             string[] tagsOfScenario = ((string[])(null));
             System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Form", null, tagsOfScenario, argumentsOfScenario, featureTags);
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("User Submits Student Registration Form on Forms Page", null, tagsOfScenario, argumentsOfScenario, featureTags);
 #line 4
 this.ScenarioInitialize(scenarioInfo);
 #line hidden
