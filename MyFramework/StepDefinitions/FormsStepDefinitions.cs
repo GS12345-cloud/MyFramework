@@ -12,6 +12,7 @@ using OpenQA.Selenium.Support.UI;
 using OpenQA.Selenium.Interactions;
 using System.Xml.Linq;
 using SeleniumExtras.WaitHelpers;
+using NUnit.Framework;
 
 namespace MyFramework.StepDefinitions
 {

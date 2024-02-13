@@ -43,9 +43,5 @@ namespace MyFramework.Page
 
         public string url = "https://demoqa.com/";
 
-        /// <summary>
-        /// Constructor containing IWebElements and a check to avoid NoSuchElementException exception (can use try/catch here)
-        /// WebDriverWait better than Thread.Sleep
-        /// </summary>
     }
 }

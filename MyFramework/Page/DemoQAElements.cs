@@ -17,8 +17,6 @@ namespace MyFramework.Page
         private IWebDriver driver;
         public static string url = "https://demoqa.com/elements";
 
-
-
         public DemoQAElements(IWebDriver driver)
         {
             wait = new WebDriverWait(driver, TimeSpan.FromSeconds(4));
@@ -26,7 +24,6 @@ namespace MyFramework.Page
             driver.Navigate().GoToUrl(url);
             wait.Until(ExpectedConditions.UrlToBe(url));
         }
-
 
         public By textBoxFieldBy = By.XPath("//*[@id=\"item-0\"]/span");
         public By TextBoxOutputResultBy = By.XPath("//*[@id=\"output\"]/div");
