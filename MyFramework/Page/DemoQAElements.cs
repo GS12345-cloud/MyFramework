@@ -37,6 +37,23 @@ namespace MyFramework.Page
         public By RadioButtonBy = By.XPath("//*[@id=\"item-2\"]/span");
         public By RadioButtonYesBy = By.XPath("//*[@id=\"app\"]/div/div/div[2]/div[2]/div[2]/div[2]/label");
         public By RadioButtonSelectedYesConfirmationBy = By.XPath("//*[@id=\"app\"]/div/div/div[2]/div[2]/div[2]/p/span");
+
+        public By WebTablesBy = By.XPath("//*[@id=\"item-3\"]");
+        public By ButtonsBy = By.XPath("//*[@id=\"item-4\"]");
+        public By LinksBy = By.XPath("//*[@id=\"item-5\"]");
+        public By BrokenLinksImagesBy = By.XPath("//*[@id=\"item-6\"]");
+        public By UploadAndDownloadBy = By.XPath("//*[@id=\"item-7\"]");
+        public By DynamicPropertiesBy = By.XPath("//*[@id=\"item-8\"]");
+
+        public By AddButtonBy = By.Id("addNewRecordButton");
+
+        public By RegistrationFormFirstName = By.Id("firstName");
+        public By RegistrationFormLastName = By.Id("lastName");
+        public By RegistrationFormEmail = By.Id(" userEmail");
+        public By RegistrationFormAge = By.Id("addNewRecordButton");
+        public By RegistrationFormSalary = By.Id("addNewRecordButton");
+        public By RegistrationFormDepartment = By.Id("addNewRecordButton");
+
         public IWebElement TextBoxField => driver.FindElement(textBoxFieldBy);
         public IWebElement TextBoxOutputResult => driver.FindElement(TextBoxOutputResultBy);
         public IWebElement FullName => driver.FindElement(FullNameBy);
@@ -49,6 +66,13 @@ namespace MyFramework.Page
         public IWebElement RadioButton => driver.FindElement(RadioButtonBy);
         public IWebElement RadioButtonYes => driver.FindElement(RadioButtonYesBy);
         public IWebElement RadioButtonSelectedConfirmation => driver.FindElement(RadioButtonSelectedYesConfirmationBy);
+        public IWebElement WebTables => driver.FindElement(WebTablesBy);
+        public IWebElement Buttons => driver.FindElement(ButtonsBy);
+        public IWebElement Links => driver.FindElement(LinksBy);
+        public IWebElement BrokenLinksImages => driver.FindElement(BrokenLinksImagesBy);
+        public IWebElement UploadAndDownload => driver.FindElement(UploadAndDownloadBy);
+        public IWebElement DynamicProperties => driver.FindElement(DynamicPropertiesBy);
+        public IWebElement AddButton => driver.FindElement(AddButtonBy);
 
 
     }

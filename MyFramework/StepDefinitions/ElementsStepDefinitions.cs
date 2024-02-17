@@ -158,25 +158,35 @@ namespace MyFramework.StepDefinitions
         [Given(@"the user clicks on the Web Tables field")]
         public void GivenTheUserClicksOnTheWebTablesField()
         {
-            throw new PendingStepException();
+            if (wait.Until(ExpectedConditions.ElementIsVisible(demoQAElements.WebTablesBy)) != null)
+            {
+                demoQAElements.WebTables.Click();
+            }
+
         }
 
         [When(@"the user clicks on the Add button")]
         public void WhenTheUserClicksOnTheAddButton()
         {
-            throw new PendingStepException();
+            if (wait.Until(ExpectedConditions.ElementIsVisible(demoQAElements.AddButtonBy)) != null)
+            {
+                demoQAElements.AddButton.Click();
+            }
         }
 
         [Then(@"the user completes the form")]
         public void ThenTheUserCompletesTheForm()
         {
-            throw new PendingStepException();
+
         }
 
         [Given(@"the user clicks on the Buttons field")]
         public void GivenTheUserClicksOnTheButtonsField()
         {
-            throw new PendingStepException();
+            if (wait.Until(ExpectedConditions.ElementIsVisible(demoQAElements.ButtonsBy)) != null)
+            {
+                demoQAElements.Buttons.Click();
+            }
         }
 
         [When(@"the user clicks on the Click Me button")]
@@ -194,7 +204,10 @@ namespace MyFramework.StepDefinitions
         [Given(@"the user clicks on the Links field")]
         public void GivenTheUserClicksOnTheLinksField()
         {
-            throw new PendingStepException();
+            if (wait.Until(ExpectedConditions.ElementIsVisible(demoQAElements.LinksBy)) != null)
+            {
+                demoQAElements.Links.Click();
+            }
         }
 
         [When(@"the user clicks on the Home link")]
@@ -212,7 +225,10 @@ namespace MyFramework.StepDefinitions
         [Given(@"the user clicks on the Broken Link - Images field")]
         public void GivenTheUserClicksOnTheBrokenLink_ImagesField()
         {
-            throw new PendingStepException();
+            if (wait.Until(ExpectedConditions.ElementIsVisible(demoQAElements.BrokenLinksImagesBy)) != null)
+            {
+                demoQAElements.BrokenLinksImages.Click();
+            }
         }
 
         [When(@"the user clicks on the Broken link")]
@@ -230,7 +246,10 @@ namespace MyFramework.StepDefinitions
         [Given(@"the user clicks on the Upload and Download field")]
         public void GivenTheUserClicksOnTheUploadAndDownloadField()
         {
-            throw new PendingStepException();
+            if (wait.Until(ExpectedConditions.ElementIsVisible(demoQAElements.UploadAndDownloadBy)) != null)
+            {
+                demoQAElements.UploadAndDownload.Click();
+            }
         }
 
         [When(@"the user chooses a file")]
@@ -254,7 +273,11 @@ namespace MyFramework.StepDefinitions
         [Given(@"the user clicks on the Dynamics Properties field")]
         public void GivenTheUserClicksOnTheDynamicsPropertiesField()
         {
-            throw new PendingStepException();
+            if (wait.Until(ExpectedConditions.ElementIsVisible(demoQAElements.DynamicPropertiesBy)) != null)
+            {
+                demoQAElements.DynamicProperties.Click();
+
+            }
         }
 
         [When(@"the user is met with a Will enable (.*) seconds button")]
