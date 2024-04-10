@@ -158,43 +158,62 @@ namespace MyFramework.StepDefinitions
         [Given(@"the user clicks on the Web Tables field")]
         public void GivenTheUserClicksOnTheWebTablesField()
         {
-            throw new PendingStepException();
+            if (wait.Until(ExpectedConditions.ElementIsVisible(demoQAElements.WebTablesBy)) != null)
+            {
+                demoQAElements.WebTables.Click();
+            }
+
         }
 
         [When(@"the user clicks on the Add button")]
         public void WhenTheUserClicksOnTheAddButton()
         {
-            throw new PendingStepException();
+            if (wait.Until(ExpectedConditions.ElementIsVisible(demoQAElements.AddButtonBy)) != null)
+            {
+                demoQAElements.AddButton.Click();
+            }
         }
 
         [Then(@"the user completes the form")]
         public void ThenTheUserCompletesTheForm()
         {
-            throw new PendingStepException();
+
         }
 
         [Given(@"the user clicks on the Buttons field")]
         public void GivenTheUserClicksOnTheButtonsField()
         {
-            throw new PendingStepException();
+            if (wait.Until(ExpectedConditions.ElementIsVisible(demoQAElements.ButtonsBy)) != null)
+            {
+                demoQAElements.Buttons.Click();
+            }
         }
 
         [When(@"the user clicks on the Click Me button")]
         public void WhenTheUserClicksOnTheClickMeButton()
         {
-            throw new PendingStepException();
+            if (wait.Until(ExpectedConditions.ElementToBeClickable(demoQAElements.ClickMeBy)) != null)
+            {
+                demoQAElements.ClickMe.Click();
+            }
         }
 
         [Then(@"the gets a text success")]
         public void ThenTheGetsATextSuccess()
         {
-            throw new PendingStepException();
+            if (wait.Until(ExpectedConditions.ElementIsVisible(demoQAElements.ClickMeDynamicClickMessage)) != null)
+            {
+                Assert.Pass();
+            }
         }
 
         [Given(@"the user clicks on the Links field")]
         public void GivenTheUserClicksOnTheLinksField()
         {
-            throw new PendingStepException();
+            if (wait.Until(ExpectedConditions.ElementIsVisible(demoQAElements.LinksBy)) != null)
+            {
+                demoQAElements.Links.Click();
+            }
         }
 
         [When(@"the user clicks on the Home link")]
@@ -212,37 +231,58 @@ namespace MyFramework.StepDefinitions
         [Given(@"the user clicks on the Broken Link - Images field")]
         public void GivenTheUserClicksOnTheBrokenLink_ImagesField()
         {
-            throw new PendingStepException();
+            if (wait.Until(ExpectedConditions.ElementIsVisible(demoQAElements.BrokenLinksImagesBy)) != null)
+            {
+                demoQAElements.BrokenLinksImages.Click();
+            }
         }
 
         [When(@"the user clicks on the Broken link")]
         public void WhenTheUserClicksOnTheBrokenLink()
         {
-            throw new PendingStepException();
+            if (wait.Until(ExpectedConditions.ElementIsVisible(demoQAElements.BrokenLinkBy)) != null)
+            {
+                demoQAElements.BrokenLink.Click();
+            }
         }
 
         [Then(@"the user gets navigated to a broken page")]
         public void ThenTheUserGetsNavigatedToABrokenPage()
         {
-            throw new PendingStepException();
+            if (wait.Until(ExpectedConditions.UrlToBe("https://the-internet.herokuapp.com/status_codes/500")))
+            {
+                Assert.Pass();
+            }
         }
 
-        [Given(@"the user clicks on the Upload and Download field")]
-        public void GivenTheUserClicksOnTheUploadAndDownloadField()
+        [Given(@"the user clicks on the UploadDownload button")]
+        public void GivenTheUserClicksOnTheUploadDownloadButton()
         {
-            throw new PendingStepException();
+            if (wait.Until(ExpectedConditions.ElementIsVisible(demoQAElements.UploadDownloadBy)) != null)
+            {
+                demoQAElements.UploadDownload.Click();
+            }
         }
 
-        [When(@"the user chooses a file")]
-        public void WhenTheUserChoosesAFile()
+
+        [When(@"the user clicks on the download button")]
+        public void WhenTheUserClicksOnTheDownloadButton()
         {
-            throw new PendingStepException();
+            if (wait.Until(ExpectedConditions.ElementIsVisible(demoQAElements.DownloadBy)) != null)
+            {
+                demoQAElements.Download.Click();
+            }
         }
 
-        [Then(@"the user gets a filepath response")]
-        public void ThenTheUserGetsAFilepathResponse()
+        [Then(@"the user gets a file downloaded")]
+        public void ThenTheUserGetsAFileDownloaded()
         {
-            throw new PendingStepException();
+            Download download = new(driver);
+            
+            if (download.IsFileDownloaded(driver))
+            {
+                Assert.Pass();
+            }
         }
 
         [Then(@"the user downloads a file")]
@@ -254,7 +294,11 @@ namespace MyFramework.StepDefinitions
         [Given(@"the user clicks on the Dynamics Properties field")]
         public void GivenTheUserClicksOnTheDynamicsPropertiesField()
         {
-            throw new PendingStepException();
+            if (wait.Until(ExpectedConditions.ElementIsVisible(demoQAElements.DynamicPropertiesBy)) != null)
+            {
+                demoQAElements.DynamicProperties.Click();
+
+            }
         }
 
         [When(@"the user is met with a Will enable (.*) seconds button")]

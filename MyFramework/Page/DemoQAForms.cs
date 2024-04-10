@@ -18,6 +18,8 @@ namespace MyFramework.Page
     {
         private readonly WebDriverWait wait;
         private IWebDriver driver;
+        //public By consentButtonBy = By.XPath("/html/body/div[3]/div[2]/div[1]/div[2]/div[2]/button[1]");
+        //public IWebElement consentButton => driver.FindElement(consentButtonBy);
 
         /// <summary>
         /// Constructor containing IWebElements and a check to avoid NoSuchElementException exception (can use try/catch here)
@@ -30,7 +32,7 @@ namespace MyFramework.Page
             this.driver = driver;
             driver.Navigate().GoToUrl(url);
             wait.Until(ExpectedConditions.UrlToBe(url));
-
+            //consentButton.Click(); // Cookies consent button
         }
 
         /// <summary>
