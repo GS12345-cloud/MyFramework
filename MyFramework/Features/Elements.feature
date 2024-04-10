@@ -44,9 +44,9 @@ When the user chooses a file
 Then the user gets a filepath response
 
 Scenario: Download
-And the user clicks on the Upload and Download field
-When the user chooses a file
-Then the user downloads a file
+And the user clicks on the UploadDownload button
+When the user clicks on the download button
+Then the user gets a file downloaded
 
 Scenario: Dynamics Properties
 And the user clicks on the Dynamics Properties field
