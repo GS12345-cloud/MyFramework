@@ -2,15 +2,9 @@ using MyFramework.Hooks;
 using MyFramework.Page;
 using OpenQA.Selenium.Chrome;
 using OpenQA.Selenium;
-using System;
-using System.Drawing;
-using TechTalk.SpecFlow;
 using SkiaSharp;
-using static System.Net.WebRequestMethods;
-using OpenQA.Selenium.DevTools.V117.Input;
 using OpenQA.Selenium.Support.UI;
 using OpenQA.Selenium.Interactions;
-using System.Xml.Linq;
 using SeleniumExtras.WaitHelpers;
 using NUnit.Framework;
 
@@ -34,6 +28,7 @@ namespace MyFramework.StepDefinitions
             // Initialize the page object with the WebDriver
             driver = new ChromeDriver();
             demoQAForms = new DemoQAForms(driver);
+            driver.Manage().Window.Maximize();
         }
 
 
@@ -72,6 +67,7 @@ namespace MyFramework.StepDefinitions
             Thread.Sleep(500);
             demoQAForms.DateOfBirthFieldElement.Click();
             Thread.Sleep(500);
+            driver.Manage().Window.FullScreen();
             demoQAForms.SubjectsFieldElement.Click();
             Thread.Sleep(2000);
             Actions actions = new(driver);
@@ -137,8 +133,13 @@ namespace MyFramework.StepDefinitions
             // It's not actually possible to see the button in Chrome due to the button being covered by an advertisment. Will leave this for now
             // It's not possible for the user to click on the Submit as it's outside the view.
             wait.Until(ExpectedConditions.ElementToBeClickable(By.XPath("//*[@id=\"submit\"]"))).SendKeys(Keys.Enter);
+
+
             // //*[@id="closeLargeModal"]
-            wait.Until(ExpectedConditions.ElementToBeClickable(By.XPath("//*[@id=\"closeLargeModal\"]"))).Click();
+            if (wait.Until(ExpectedConditions.ElementIsVisible(demoQAForms.formSubmitSuccessBy)) != null)
+            {
+                Assert.Pass();
+            }
         }
     }
 }

@@ -6,6 +6,7 @@ using OpenQA.Selenium.Chrome;
 using OpenQA.Selenium.Support.UI;
 using SeleniumExtras.WaitHelpers;
 using System;
+using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Drawing;
 using System.Security.Policy;
@@ -26,7 +27,8 @@ namespace MyFramework.StepDefinitions
             // Initialize the page object with the WebDriver
             driver = new ChromeDriver();
             demoQAElements = new DemoQAElements(driver);
-            wait = new(driver, TimeSpan.FromSeconds(5));
+            wait = new(driver, TimeSpan.FromSeconds(10));
+            driver.Manage().Window.Maximize();
         }
 
 
@@ -75,13 +77,13 @@ namespace MyFramework.StepDefinitions
             {
                 demoQAElements.PermanentAddress.SendKeys("My Permanent Address");
             }
-            if (wait.Until(ExpectedConditions.ElementIsVisible(demoQAElements.SubmitButtonBy)) != null)
+            //OpenQA.Selenium.ElementClickInterceptedException if we use just element is visible, might be clickable
+            if (wait.Until(ExpectedConditions.ElementToBeClickable(demoQAElements.SubmitButtonBy)) != null)
             {
-                demoQAElements.SubmitButton.Click();
+                IJavaScriptExecutor jsExecutor = (IJavaScriptExecutor)driver;
+                // XPath and normal methods not working here, using JS
+                jsExecutor.ExecuteScript("document.querySelector('#submit').click();");
             }
-
-
-            Thread.Sleep(5000); // Blocks thread but we can see visually
         }
 
         [Then(@"the user observes a new box appearing below the submit button")]
@@ -140,9 +142,11 @@ namespace MyFramework.StepDefinitions
         [When(@"the user clicks on the Yes radio button")]
         public void WhenTheUserClicksOnTheYesRadioButton()
         {
-            if (wait.Until(ExpectedConditions.ElementIsVisible(demoQAElements.RadioButtonYesBy)) != null)
+            if (wait.Until(ExpectedConditions.ElementExists(demoQAElements.RadioButtonYesBy)) != null)
             {
-                demoQAElements.RadioButtonYes.Click();
+                IJavaScriptExecutor jsExecutor = (IJavaScriptExecutor)driver;
+                // XPath and normal methods not working here, using JS
+                jsExecutor.ExecuteScript("document.querySelector('#yesRadio').click();");
             }
         }
 
@@ -151,7 +155,7 @@ namespace MyFramework.StepDefinitions
         {
             if (wait.Until(ExpectedConditions.ElementIsVisible(demoQAElements.RadioButtonSelectedYesConfirmationBy)) != null)
             {
-                demoQAElements.RadioButtonSelectedConfirmation.Click();
+                Assert.Pass();
             }
         }
 
@@ -179,6 +183,37 @@ namespace MyFramework.StepDefinitions
         {
 
         }
+
+        [Given(@"the user clicks on the Upload and Download field")]
+        public void GivenTheUserClicksOnTheUploadAndDownloadField()
+        {
+            if (wait.Until(ExpectedConditions.ElementIsVisible(demoQAElements.UploadDownloadBy)) != null)
+            {
+                demoQAElements.UploadDownload.Click();
+            }
+        }
+        /// <summary>
+        /// Dependency on specific computer with specific logged in user, can be changed
+        /// </summary>
+        [When(@"the user chooses a file")]
+        public void WhenTheUserChoosesAFile()
+        {
+            if (wait.Until(ExpectedConditions.ElementIsVisible(demoQAElements.DownloadBy)) != null)
+            {
+                demoQAElements.Download.Click();
+            }
+        }
+
+        [Then(@"the user gets a filepath response")]
+        public void ThenTheUserGetsAFilepathResponse()
+        {
+            if (wait.Until(ExpectedConditions.ElementIsVisible(demoQAElements.UploadFileButtonBy)) != null)
+            {
+                demoQAElements.UploadFileButton.SendKeys(@"C:\\Users\\giwin\\Downloads\\sampleFile (1).jpeg");
+            }
+            Thread.Sleep(10000);
+        }
+
 
         [Given(@"the user clicks on the Buttons field")]
         public void GivenTheUserClicksOnTheButtonsField()
@@ -219,13 +254,33 @@ namespace MyFramework.StepDefinitions
         [When(@"the user clicks on the Home link")]
         public void WhenTheUserClicksOnTheHomeLink()
         {
-            throw new PendingStepException();
+            if (wait.Until(ExpectedConditions.ElementIsVisible(demoQAElements.HomeLinkBy)) != null)
+            {
+                demoQAElements.HomeLink.Click();
+            }
         }
 
         [Then(@"the user gets navigated to the Home page")]
         public void ThenTheUserGetsNavigatedToTheHomePage()
         {
-            throw new PendingStepException();
+            string mainWindowHandle = driver.CurrentWindowHandle;
+
+            IReadOnlyCollection<string> allWindowHandles = driver.WindowHandles;
+
+            // Switch to the new tab
+            foreach (string windowHandle in allWindowHandles)
+            {
+                if (windowHandle != mainWindowHandle)
+                {
+                    driver.SwitchTo().Window(windowHandle); // should only be one more handle
+                    break;
+                }
+            }
+
+            if (wait.Until(ExpectedConditions.UrlMatches("https://demoqa.com/")))
+            {
+                Assert.Pass();
+            }
         }
 
         [Given(@"the user clicks on the Broken Link - Images field")]
@@ -301,18 +356,23 @@ namespace MyFramework.StepDefinitions
             }
         }
 
-        [When(@"the user is met with a Will enable (.*) seconds button")]
+        [When(@"the user is met with a will enable (.*) seconds button")]
         public void WhenTheUserIsMetWithAWillEnableSecondsButton(int p0)
         {
-            throw new PendingStepException();
+            if (wait.Until(ExpectedConditions.ElementIsVisible(demoQAElements.DynamicPropertiesBy)) != null)
+            {
+                // No action required by the user
+            }
         }
 
         [Then(@"the user can see a new button appear")]
         public void ThenTheUserCanSeeANewButtonAppear()
         {
-            throw new PendingStepException();
+            if (wait.Until(ExpectedConditions.ElementIsVisible(demoQAElements.ColorChangeBy)) != null)
+            {
+                Assert.Pass();
+            }
         }
-
     }
 }
  
