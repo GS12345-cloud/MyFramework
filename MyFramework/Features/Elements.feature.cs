@@ -403,7 +403,7 @@ this.FeatureBackground();
 testRunner.And("the user clicks on the Dynamics Properties field", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
 #line 53
-testRunner.When("the user is met with a Will enable 5 seconds button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+testRunner.When("the user is met with a will enable 5 seconds button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
 #line 54
 testRunner.Then("the user can see a new button appear", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");

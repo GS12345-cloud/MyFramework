@@ -41,8 +41,8 @@ namespace MyFramework.Page
         public By CheckBoxBy = By.XPath("//*[@id=\"item-1\"]/span");
         public By CheckBoxHomeBy = By.XPath("//*[@id=\"tree-node\"]/ol/li/span/label");
         public By RadioButtonBy = By.XPath("//*[@id=\"item-2\"]/span");
-        public By RadioButtonYesBy = By.XPath("//*[@id=\"app\"]/div/div/div[2]/div[2]/div[2]/div[2]/label");
-        public By RadioButtonSelectedYesConfirmationBy = By.XPath("//*[@id=\"app\"]/div/div/div[2]/div[2]/div[2]/p/span");
+        public By RadioButtonYesBy = By.XPath("//*[@id=\"yesRadio\"]");
+        public By RadioButtonSelectedYesConfirmationBy = By.XPath("//*[@id=\"app\"]/div/div/div/div[2]/div[2]/p/span");
         public By ClickMeBy = By.XPath("/html/body/div[2]/div/div/div/div[2]/div[2]/div[3]/button");
         public By ClickMeDynamicClickMessage = By.Id("dynamicClickMessage");
 
@@ -53,7 +53,10 @@ namespace MyFramework.Page
         public By BrokenLinkBy = By.XPath("//*[@id=\"app\"]/div/div/div/div[2]/div[2]/a[2]");
         public By DownloadBy = By.Id("downloadButton");
         public By UploadDownloadBy = By.Id("item-7");
+        public By UploadFileButtonBy = By.XPath("//*[@id=\"uploadFile\"]");
         public By DynamicPropertiesBy = By.XPath("//*[@id=\"item-8\"]");
+        public By HomeLinkBy = By.XPath("//*[@id=\"simpleLink\"]");
+        public By ColorChangeBy = By.XPath("//*[@id=\"colorChange\"]");
 
         public By AddButtonBy = By.Id("addNewRecordButton");
 
@@ -82,10 +85,12 @@ namespace MyFramework.Page
         public IWebElement Links => driver.FindElement(LinksBy);
         public IWebElement BrokenLinksImages => driver.FindElement(BrokenLinksImagesBy);
         public IWebElement BrokenLink => driver.FindElement(BrokenLinkBy);
+        public IWebElement UploadFileButton => driver.FindElement(UploadFileButtonBy);
         public IWebElement UploadDownload => driver.FindElement(UploadDownloadBy);
         public IWebElement Download => driver.FindElement(DownloadBy);
         public IWebElement DynamicProperties => driver.FindElement(DynamicPropertiesBy);
         public IWebElement AddButton => driver.FindElement(AddButtonBy);
+        public IWebElement HomeLink => driver.FindElement(HomeLinkBy);
 
 
     }

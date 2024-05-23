@@ -50,7 +50,7 @@ Then the user gets a file downloaded
 
 Scenario: Dynamics Properties
 And the user clicks on the Dynamics Properties field
-When the user is met with a Will enable 5 seconds button
+When the user is met with a will enable 5 seconds button
 Then the user can see a new button appear
 
 

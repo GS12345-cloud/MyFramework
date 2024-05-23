@@ -55,6 +55,8 @@ namespace MyFramework.Page
         public By currentAddressBy = By.XPath("//*[@id=\"currentAddress\"]");
         public By uploadPictureBy = By.XPath("//*[@id=\"uploadPicture\"]");
         public By submitButtonBy = By.XPath("//*[@id=\"submit\"]");
+        public By formSubmitSuccessBy = By.XPath("//*[@id=\"closeLargeModal\"]");
+
         /// <summary>
         /// Updated to add the driver.FindElement to the IWebElement
         /// </summary>
@@ -74,6 +76,8 @@ namespace MyFramework.Page
         public IWebElement PictureElement => driver.FindElement(pictureBy);
         public IWebElement CurrentAddressElement => driver.FindElement(currentAddressBy);
         public IWebElement SubmitElement => driver.FindElement(submitButtonBy);
+        public IWebElement FormSubmitSuccess => driver.FindElement(formSubmitSuccessBy);
+
 
 
         public string url = "https://demoqa.com/";
